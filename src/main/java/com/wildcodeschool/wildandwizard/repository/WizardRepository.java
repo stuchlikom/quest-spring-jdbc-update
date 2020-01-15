@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 import com.wildcodeschool.wildandwizard.entity.Wizard;
 import com.wildcodeschool.wildandwizard.util.JdbcUtils;
@@ -30,7 +31,7 @@ public class WizardRepository {
             );
             statement.setString(1, firstName);
             statement.setString(2, lastName);
-            statement.setDate(3, birthday);
+            statement.setDate(3, birthday, Calendar.getInstance());
             statement.setString(4, birthPlace);
             statement.setString(5, biography);
             statement.setBoolean(6, muggle);
