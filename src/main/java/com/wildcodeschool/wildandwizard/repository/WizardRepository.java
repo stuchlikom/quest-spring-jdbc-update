@@ -31,7 +31,9 @@ public class WizardRepository {
             );
             statement.setString(1, firstName);
             statement.setString(2, lastName);
-            statement.setDate(3, birthday, Calendar.getInstance());
+            //statement.setDate(3, birthday); // stores date one day before input
+            //statement.setString(3, birthday.getYear() + "-" + (birthday.getMonth() + 1) + "-" + birthday.getDate()); // workaround
+            statement.setDate(3, birthday, Calendar.getInstance()); // better workaround
             statement.setString(4, birthPlace);
             statement.setString(5, biography);
             statement.setBoolean(6, muggle);
